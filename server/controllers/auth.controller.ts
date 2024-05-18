@@ -1,11 +1,14 @@
 import {Request, Response} from 'express'
 import jwt from 'jsonwebtoken'
 
+
+
 export const loginHandler = (req: Request, res:Response)=>{
 
     const token = jwt.sign({
         test: "test"
-    }, 'secret',{
+        // este texto ''secret tiene que ir en el verify del requireAuth para que funcione, puede ser cualquier otro texto
+    }, 'secret' ,{
         expiresIn: 60 * 60 * 24
     })
 
@@ -15,4 +18,13 @@ export const loginHandler = (req: Request, res:Response)=>{
 }
 
 
-// https://youtu.be/KQbgKizEjxw?t=1014
+
+export const profileHandler = (req: Request, res: Response) => {
+
+  res.json({
+    profile: req.userToken,
+    message: "profile data"
+  })
+
+}
+
