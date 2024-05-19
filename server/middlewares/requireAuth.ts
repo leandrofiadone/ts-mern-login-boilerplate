@@ -26,7 +26,7 @@ export const requireAuth = (req: Request, res:Response, next: NextFunction)=>
             return res.status(401).json({
               message: "Unauthorized"
             })
-            
+
             console.log(userToken)
             req.userToken = userToken
         })
@@ -36,3 +36,5 @@ export const requireAuth = (req: Request, res:Response, next: NextFunction)=>
     }
 
     // por aca pasa la validacion de usuario
+
+
