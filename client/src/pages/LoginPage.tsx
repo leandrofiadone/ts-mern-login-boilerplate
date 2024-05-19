@@ -1,10 +1,10 @@
 
 import { loginRequest } from '../api/auth'
-// import {useAuthStore} from "../store/auth"
+import {useAuthStore} from "../store/auth"
 // import {Link, useNavigate} from "react-router-dom"
 
 function LoginPage() {
-//   const setToken = useAuthStore((state) => state.setToken)
+  const setToken = useAuthStore((state) => state.setToken)
 //   const setProfile = useAuthStore((state) => state.setProfile)
 //   const navigate = useNavigate()
 
@@ -17,7 +17,7 @@ function LoginPage() {
 
 
     const resLogin = await loginRequest(email, password)
-    // setToken(resLogin.data.token)
+    setToken(resLogin.data.token)
     console.log(resLogin)
 
     // const resProfile = await profileRequest()
@@ -65,3 +65,6 @@ function LoginPage() {
 }
 
 export default LoginPage
+
+// Almacenamiento Token
+// https://youtu.be/KQbgKizEjxw?t=2918
