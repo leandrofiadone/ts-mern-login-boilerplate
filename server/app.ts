@@ -6,9 +6,19 @@ import cors from 'cors'
 
 const app = express()
 
-app.use(cors({
-    credentials: true
-}))
+const corsOptions = {
+  origin: [
+    "http://localhost:5173",
+    "https://ts-mern-login-boilerplate-1.onrender.com"
+  ],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}
+
+app.use(cors(corsOptions))
+
+
 app.use(authRoutes)
 
 export default app
