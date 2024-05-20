@@ -9,7 +9,8 @@ const app = express()
 const corsOptions = {
   origin: [
     "http://localhost:5173",
-    "https://ts-mern-login-boilerplate-1.onrender.com"
+    "https://ts-mern-login-boilerplate-1.onrender.com",
+    "https://ts-mern-login-boilerplate.vercel.app"
   ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
