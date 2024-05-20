@@ -1,12 +1,12 @@
 
-import { loginRequest } from '../api/auth'
+import { loginRequest, profileRequest } from '../api/auth'
 import {useAuthStore} from "../store/auth"
-// import {Link, useNavigate} from "react-router-dom"
+import { useNavigate} from "react-router-dom"
 
 function LoginPage() {
   const setToken = useAuthStore((state) => state.setToken)
-//   const setProfile = useAuthStore((state) => state.setProfile)
-//   const navigate = useNavigate()
+  const setProfile = useAuthStore((state) => state.getProfile)
+  const navigate = useNavigate()
 
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -20,12 +20,12 @@ function LoginPage() {
     setToken(resLogin.data.token)
     console.log(resLogin)
 
-    // const resProfile = await profileRequest()
-    // setProfile(resProfile.data)
-    // console.log(resProfile)
+    const resProfile = await profileRequest()
+    setProfile(resProfile.data.profile)
+    console.log(resProfile)
 
 
-    // navigate("/dashboard")
+    navigate("/profile")
   }
 
 
@@ -66,5 +66,5 @@ function LoginPage() {
 
 export default LoginPage
 
-// Almacenamiento Token
-// https://youtu.be/KQbgKizEjxw?t=2918
+// Request profile
+// https://youtu.be/KQbgKizEjxw?t=3403

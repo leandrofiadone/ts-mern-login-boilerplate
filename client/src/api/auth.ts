@@ -1,9 +1,11 @@
-import axios from 'axios'
+
 // import {createUser} from "../interface/user"
+
+import axios from '../libs/axios'
 
 
 export const loginRequest = async (email: string, password: string) =>
-  axios.post("https://ts-mern-login-boilerplate-1.onrender.com/login", {
+  axios.post("/login", {
     email,
     password
   })
@@ -11,4 +13,5 @@ export const loginRequest = async (email: string, password: string) =>
 // export const registerRequest = async (data: createUser) =>
 //   axios.post("/api/auth/register", data)
 
-export const profileRequest = async () => axios.get("/api/auth/profile")
+export const profileRequest = async () =>
+  axios.get("/profile")
