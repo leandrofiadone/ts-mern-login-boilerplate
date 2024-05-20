@@ -1,6 +1,4 @@
+## Basado en
 
-
-#Basado en:
-
-https://github.com/fazt/mern-zustand-auth
-https://youtu.be/KQbgKizEjxw
+- [Repositorio en GitHub](https://github.com/fazt/mern-zustand-auth)
+- [Video en YouTube](https://youtu.be/KQbgKizEjxw)
